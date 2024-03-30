@@ -7,7 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Ordering.Application;
+using Ordering.Infraustructure;
 namespace Ordering.API
 {
     public class Startup
@@ -22,6 +23,8 @@ namespace Ordering.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplicationServices();
+            services.AddInfrastructureServices(Configuration);
             services.AddRazorPages();
         }
 

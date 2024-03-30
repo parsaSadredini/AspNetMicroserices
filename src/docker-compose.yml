@@ -36,6 +36,11 @@ services:
     build:
       context: .
       dockerfile: Discount/Discount.gRPC/Dockerfile
+  ordering.api:
+    image: ${DOCKER_REGISTRY-}orderingapi
+    build:
+      context: .
+      dockerfile: Ordering/Ordering.API/Dockerfile
 
 volumes:
   mongo_data:
